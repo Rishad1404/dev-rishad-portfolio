@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
 
 export default function Home() {
   return (
@@ -8,21 +9,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-
-        <section
-          id="about"
-          className="min-h-screen flex items-center justify-center"
-        >
-          <div className="text-center">
-            <p className="text-xs font-mono text-muted-foreground/40 mb-2">
-              coming next
-            </p>
-            <h2 className="text-3xl font-bold text-foreground">About Me</h2>
-            <p className="text-muted-foreground mt-2 font-mono text-sm">
-              Step 4...
-            </p>
-          </div>
-        </section>
+        <About />
 
         <section
           id="education"
