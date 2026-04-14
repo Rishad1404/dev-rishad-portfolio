@@ -1,61 +1,86 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/sections/Hero";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section id="home" className="min-h-screen flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <h1 className="text-5xl font-bold gradient-text">
-              Md. Rishad Islam
-            </h1>
-            <p className="text-muted-foreground text-xl">Full Stack Developer</p>
-            <p className="text-sm text-muted-foreground">
-              Hero section coming next... 🚀
+        <Hero />
+
+        <section
+          id="about"
+          className="min-h-screen flex items-center justify-center"
+        >
+          <div className="text-center">
+            <p className="text-xs font-mono text-muted-foreground/40 mb-2">
+              coming next
+            </p>
+            <h2 className="text-3xl font-bold text-foreground">About Me</h2>
+            <p className="text-muted-foreground mt-2 font-mono text-sm">
+              Step 4...
             </p>
           </div>
         </section>
 
-        {/* About */}
-        <section id="about" className="min-h-screen flex items-center justify-center">
+        <section
+          id="education"
+          className="min-h-screen flex items-center justify-center"
+        >
           <div className="text-center">
-            <h2 className="text-3xl font-bold gradient-text">About Me</h2>
-            <p className="text-muted-foreground mt-2">Coming in Step 4...</p>
+            <p className="text-xs font-mono text-muted-foreground/40 mb-2">
+              coming next
+            </p>
+            <h2 className="text-3xl font-bold text-foreground">Education</h2>
+            <p className="text-muted-foreground mt-2 font-mono text-sm">
+              Step 5...
+            </p>
           </div>
         </section>
 
-        {/* Education */}
-        <section id="education" className="min-h-screen flex items-center justify-center">
+        <section
+          id="skills"
+          className="min-h-screen flex items-center justify-center"
+        >
           <div className="text-center">
-            <h2 className="text-3xl font-bold gradient-text">Education</h2>
-            <p className="text-muted-foreground mt-2">Coming in Step 5...</p>
+            <p className="text-xs font-mono text-muted-foreground/40 mb-2">
+              coming next
+            </p>
+            <h2 className="text-3xl font-bold text-foreground">Tech Stack</h2>
+            <p className="text-muted-foreground mt-2 font-mono text-sm">
+              Step 6...
+            </p>
           </div>
         </section>
 
-        {/* Skills */}
-        <section id="skills" className="min-h-screen flex items-center justify-center">
+        <section
+          id="projects"
+          className="min-h-screen flex items-center justify-center"
+        >
           <div className="text-center">
-            <h2 className="text-3xl font-bold gradient-text">Tech Stack</h2>
-            <p className="text-muted-foreground mt-2">Coming in Step 6...</p>
+            <p className="text-xs font-mono text-muted-foreground/40 mb-2">
+              coming next
+            </p>
+            <h2 className="text-3xl font-bold text-foreground">Projects</h2>
+            <p className="text-muted-foreground mt-2 font-mono text-sm">
+              Step 7...
+            </p>
           </div>
         </section>
 
-        {/* Projects */}
-        <section id="projects" className="min-h-screen flex items-center justify-center">
+        <section
+          id="contact"
+          className="min-h-screen flex items-center justify-center"
+        >
           <div className="text-center">
-            <h2 className="text-3xl font-bold gradient-text">Projects</h2>
-            <p className="text-muted-foreground mt-2">Coming in Step 7...</p>
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section id="contact" className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold gradient-text">Contact</h2>
-            <p className="text-muted-foreground mt-2">Coming in Step 8...</p>
+            <p className="text-xs font-mono text-muted-foreground/40 mb-2">
+              coming next
+            </p>
+            <h2 className="text-3xl font-bold text-foreground">Contact</h2>
+            <p className="text-muted-foreground mt-2 font-mono text-sm">
+              Step 8...
+            </p>
           </div>
         </section>
       </main>
