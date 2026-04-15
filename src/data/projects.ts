@@ -13,31 +13,32 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Project One",
+    title: "ScholarTrack SaaS",
     description:
-      "A brief description of your first project. Update this later.",
+      "An enterprise-grade platform centralizing and streamlining scholarship management for university administrators.",
     longDescription:
-      "Detailed description of the project including what problems it solves and your role in building it.",
+      "A comprehensive, decoupled SaaS architecture built to handle complex user roles and secure cross-origin authentication. Features include automated Stripe subscription processing via robust webhooks, a custom real-time notification engine, and a scalable relational database schema managed through Prisma.",
     techStack: [
-      "Next.js",
+      "Next.js 15",
       "TypeScript",
-      "Tailwind CSS",
-      "Prisma",
+      "Express.js",
       "PostgreSQL",
+      "Stripe API",
+      "Tailwind CSS",
     ],
-    liveUrl: "#",
-    githubUrl: "#",
-    image: "/projects/project1.png",
+    liveUrl: "https://frontend-scholar-track.vercel.app",
+    githubUrl: "https://github.com/Rishad1404/frontend-scholar-track",
+    image: "/projects/scholartrack.png", // Make sure to add a screenshot to your public/projects folder!
     featured: true,
   },
   {
     id: 2,
-    title: "Project Two",
+    title: "E-Commerce Architecture",
     description:
-      "A brief description of your second project. Update this later.",
+      "A full-stack headless e-commerce solution with dynamic routing and advanced state management.",
     longDescription:
-      "Detailed description of the project including what problems it solves and your role in building it.",
-    techStack: ["React", "Node.js", "Express.js", "MongoDB"],
+      "A high-performance digital storefront utilizing Server-Side Rendering (SSR) for optimal SEO. Features include a custom shopping cart context, integration with a headless CMS for inventory management, and a secure checkout flow.",
+    techStack: ["React", "Node.js", "MongoDB", "Redux", "Framer Motion"],
     liveUrl: "#",
     githubUrl: "#",
     image: "/projects/project2.png",
@@ -45,15 +46,15 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Project Three",
+    title: "Real-time Analytics Dashboard",
     description:
-      "A brief description of your third project. Update this later.",
+      "A data visualization dashboard providing real-time metrics and filtering capabilities.",
     longDescription:
-      "Detailed description of the project including what problems it solves and your role in building it.",
-    techStack: ["Next.js", "TypeScript", "Docker", "PostgreSQL"],
+      "Designed to process and display complex datasets intuitively. Built with a focus on component reusability and fast rendering cycles, utilizing containerized microservices for backend data aggregation.",
+    techStack: ["Next.js", "TypeScript", "Docker", "Prisma", "Shadcn UI"],
     liveUrl: "#",
     githubUrl: "#",
     image: "/projects/project3.png",
-    featured: true,
+    featured: false, // Set to true if you want it prominent on the home page
   },
 ];

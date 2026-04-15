@@ -587,7 +587,7 @@ export function About() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,var(--background)_75%)]" />
 
       {/* Primary Glow */}
-      <div className="pointer-events-none absolute right-[-10%] top-[20%] h-[600px] w-[600px] -translate-y-1/2 rounded-full bg-primary/5 blur-[120px]" />
+      <div className="pointer-events-none absolute right-[-10%] top-[20%] h-[600px] w-[600px] -translate-y-1/2 rounded-full blur-[120px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
         <SectionHeader />
