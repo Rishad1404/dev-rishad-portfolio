@@ -3,6 +3,9 @@ import {
   SiStackoverflow,
   SiFacebook,
   SiInstagram,
+  SiFiverr,
+  SiUpwork,
+  SiFreelancer,
 } from "react-icons/si";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
@@ -13,6 +16,14 @@ export interface Social {
   url: string;
   icon: IconType;
   color: string;
+}
+export interface FreelanceProfile {
+  name: string;
+  url: string;
+  icon: IconType;
+  color: string;
+  description: string;
+  badge: string;
 }
 
 export const socials: Social[] = [
@@ -51,6 +62,33 @@ export const socials: Social[] = [
     url: "https://github.com/Rishad1404",
     icon: FaGithub,
     color: "#181717",
+  },
+];
+
+export const freelanceProfiles: FreelanceProfile[] = [
+  {
+    name: "Fiverr",
+    url: "https://www.fiverr.com/s/EgB64oK",
+    icon: SiFiverr,
+    color: "#1DBF73",
+    description: "Hire me on Fiverr for quick and quality deliveries.",
+    badge: "Available",
+  },
+  {
+    name: "Upwork",
+    url: "https://www.upwork.com/freelancers/~018ed5768eae4a1ad5",
+    icon: SiUpwork,
+    color: "#14A800",
+    description: "Find my full profile and reviews on Upwork.",
+    badge: "Available",
+  },
+  {
+    name: "Freelancer",
+    url: "https://www.freelancer.com/u/Rishad14",
+    icon: SiFreelancer,
+    color: "#29B2FE",
+    description: "Connect with me on Freelancer.com.",
+    badge: "Active",
   },
 ];
 
