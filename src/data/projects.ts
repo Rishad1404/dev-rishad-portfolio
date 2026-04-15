@@ -13,48 +13,61 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "ScholarTrack SaaS",
+    title: "ScholarTrack - Enterprise SaaS",
     description:
-      "An enterprise-grade platform centralizing and streamlining scholarship management for university administrators.",
+      "A comprehensive SaaS platform streamlining scholarship management with secure authentication and automated Stripe billing.",
     longDescription:
-      "A comprehensive, decoupled SaaS architecture built to handle complex user roles and secure cross-origin authentication. Features include automated Stripe subscription processing via robust webhooks, a custom real-time notification engine, and a scalable relational database schema managed through Prisma.",
+      "Engineered a decoupled, enterprise-grade architecture using Next.js 15 and Express.js. Features include secure cross-domain authentication, automated subscription tier management via Stripe webhooks, and a real-time university admin dashboard powered by TanStack Query and Prisma.",
     techStack: [
       "Next.js 15",
       "TypeScript",
       "Express.js",
       "PostgreSQL",
+      "Prisma",
       "Stripe API",
-      "Tailwind CSS",
     ],
     liveUrl: "https://frontend-scholar-track.vercel.app",
     githubUrl: "https://github.com/Rishad1404/frontend-scholar-track",
-    image: "/projects/scholartrack.png", // Make sure to add a screenshot to your public/projects folder!
+    image: "https://i.ibb.co.com/1JZxfTYP/Screenshot-2026-04-13-215221.png", 
     featured: true,
   },
   {
     id: 2,
-    title: "E-Commerce Architecture",
+    title: "Medicine Corner - E-Commerce",
     description:
-      "A full-stack headless e-commerce solution with dynamic routing and advanced state management.",
+      "A high-performance full-stack e-commerce platform designed to modernize the online pharmacy experience.",
     longDescription:
-      "A high-performance digital storefront utilizing Server-Side Rendering (SSR) for optimal SEO. Features include a custom shopping cart context, integration with a headless CMS for inventory management, and a secure checkout flow.",
-    techStack: ["React", "Node.js", "MongoDB", "Redux", "Framer Motion"],
-    liveUrl: "#",
-    githubUrl: "#",
-    image: "/projects/project2.png",
+      "Developed a secure and responsive marketplace connecting patients with essential medicines. Built a comprehensive admin command center for real-time inventory and order tracking, alongside a customer-facing dashboard featuring verified reviews and instant client-side filtering without page reloads.",
+    techStack: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PostgreSQL",
+      "Prisma",
+    ],
+    liveUrl: "https://medicine-corner-client.vercel.app",
+    githubUrl: "https://github.com/Rishad1404/medicine-corner-client",
+    image: "https://i.ibb.co.com/SwrHPvRD/Screenshot-2026-04-13-220721.png", 
     featured: true,
   },
   {
     id: 3,
-    title: "Real-time Analytics Dashboard",
+    title: "StudyMate - Peer EdTech Platform",
     description:
-      "A data visualization dashboard providing real-time metrics and filtering capabilities.",
+      "An interactive educational platform facilitating collaborative group study, assignment tracking, and peer-to-peer grading.",
     longDescription:
-      "Designed to process and display complex datasets intuitively. Built with a focus on component reusability and fast rendering cycles, utilizing containerized microservices for backend data aggregation.",
-    techStack: ["Next.js", "TypeScript", "Docker", "Prisma", "Shadcn UI"],
-    liveUrl: "#",
-    githubUrl: "#",
-    image: "/projects/project3.png",
-    featured: false, // Set to true if you want it prominent on the home page
+      "Designed a collaborative environment to improve student engagement through accountability. Users can create, submit, and peer-grade assignments in real-time. Built utilizing a robust MERN stack architecture to handle dynamic user relationships and continuous data updates seamlessly.",
+    techStack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JavaScript",
+    ],
+    liveUrl: "https://stydy-mate.netlify.app",
+    githubUrl: "https://github.com/Rishad1404/assignment-11-client",
+    image: "https://i.ibb.co.com/Q3nrSRGH/Screenshot-2026-04-15-122101.png", 
+    featured: true,
   },
 ];

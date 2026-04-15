@@ -56,11 +56,11 @@ function TimelineLine({ containerRef }: { containerRef: React.RefObject<HTMLDivE
   return (
     <div className="absolute left-1/2 top-0 hidden h-full -translate-x-1/2 lg:flex lg:flex-col lg:items-center">
       {/* Track */}
-      <div className="absolute inset-0 w-[2px] bg-border/50 rounded-full" />
+      <div className="absolute inset-0 w-0.5 bg-border/50 rounded-full" />
 
       {/* Animated fill */}
       <motion.div
-        className="absolute top-0 w-[2px] rounded-full origin-top"
+        className="absolute top-0 w-0.5 rounded-full origin-top"
         style={{
           scaleY,
           height: "100%",
@@ -109,7 +109,7 @@ function EducationCard({
           className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card/80 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-primary/5 hover:shadow-xl"
         >
           {/* Gradient overlay on hover */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
           {/* Top Row */}
           <div className="relative mb-4 flex items-start justify-between gap-3">
@@ -179,7 +179,7 @@ function EducationCard({
 
           {/* Bottom animated border */}
           <motion.div
-            className="absolute bottom-0 left-0 h-[2px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400"
+            className="absolute bottom-0 left-0 h-0.5 rounded-full bg-linear-to-r from-cyan-400 via-blue-400 to-purple-400"
             initial={{ width: "0%" }}
             animate={isInView ? { width: "100%" } : { width: "0%" }}
             transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
@@ -258,10 +258,10 @@ export function Education() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,var(--background)_75%)]" />
 
       {/* Left glow */}
-      <div className="pointer-events-none absolute left-[-10%] top-[30%] h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
+      <div className="pointer-events-none absolute left-[-10%] top-[30%] h-125 w-125 rounded-full bg-primary/5 blur-[120px]" />
 
       {/* Right glow */}
-      <div className="pointer-events-none absolute right-[-10%] bottom-[20%] h-[400px] w-[400px] rounded-full bg-purple-500/5 blur-[120px]" />
+      <div className="pointer-events-none absolute right-[-10%] bottom-[20%] h-100 w-100 rounded-full bg-purple-500/5 blur-[120px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
         <SectionHeader />

@@ -325,7 +325,7 @@ function SkillCard({
         </p>
 
         {/* Progress */}
-        <div className="h-[3px] w-full overflow-hidden rounded-full bg-border/40">
+        <div className="h-0.75 w-full overflow-hidden rounded-full bg-border/40">
           <motion.div
             className="h-full rounded-full"
             style={{
@@ -455,7 +455,7 @@ function SectionHeader() {
         className="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
       >
         What I Work{" "}
-        <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
           With.
         </span>
       </motion.h2>
@@ -476,7 +476,7 @@ function SectionHeader() {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.3, ease: "circOut" }}
-        className="h-[2px] w-24 rounded-full bg-gradient-to-r from-cyan-400 to-transparent"
+        className="h-0.5 w-24 rounded-full bg-linear-to-r from-cyan-400 to-transparent"
       />
     </div>
   );

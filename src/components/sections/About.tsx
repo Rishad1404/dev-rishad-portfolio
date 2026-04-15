@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 
 import { useRef } from "react";
@@ -37,7 +36,7 @@ function SectionHeader() {
         className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
       >
         Get to know{" "}
-        <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
           me.
         </span>
       </motion.h2>
@@ -47,7 +46,7 @@ function SectionHeader() {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.2, ease: "circOut" }}
-        className="h-[2px] w-24 origin-left rounded-full bg-gradient-to-r from-cyan-400 to-transparent lg:w-32"
+        className="h-0.5 w-24 origin-left rounded-full bg-linear-to-r from-cyan-400 to-transparent lg:w-32"
       />
     </div>
   );
@@ -380,7 +379,7 @@ function BioCard() {
             transition={{ delay: 0.3 + i * 0.04, duration: 0.3 }}
             className="group -mx-5 flex gap-4 rounded px-5 transition-colors duration-150 hover:bg-muted/30"
           >
-            <span className="min-w-[20px] select-none text-right text-muted-foreground/25 transition-colors duration-200 group-hover:text-muted-foreground/50">
+            <span className="min-w-5 select-none text-right text-muted-foreground/25 transition-colors duration-200 group-hover:text-muted-foreground/50">
               {line.number}
             </span>
             <span className="whitespace-pre">{line.content}</span>
@@ -430,7 +429,7 @@ function InfoCard({
       whileHover={{ y: -4 }}
       className="group relative flex items-center gap-4 rounded-2xl border border-border/50 bg-card/40 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md"
     >
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
         <Icon className="h-5 w-5 text-primary" />
       </div>
@@ -587,7 +586,7 @@ export function About() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,var(--background)_75%)]" />
 
       {/* Primary Glow */}
-      <div className="pointer-events-none absolute right-[-10%] top-[20%] h-[600px] w-[600px] -translate-y-1/2 rounded-full blur-[120px]" />
+      <div className="pointer-events-none absolute right-[-10%] top-[20%] h-150 w-150 -translate-y-1/2 rounded-full blur-[120px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
         <SectionHeader />
@@ -598,7 +597,7 @@ export function About() {
 
           {/* Right — Code Card */}
           <div className="flex items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[500px]">
+            <div className="w-full max-w-125">
               <BioCard />
             </div>
           </div>

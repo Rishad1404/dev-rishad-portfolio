@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 
@@ -115,7 +114,7 @@ function TechLogo({ onClick }: { onClick: () => void }) {
 
           {/* Blinking cursor (Fixed ease error) */}
           <motion.span
-            className="inline-block w-[2px] h-4 ml-0.5 rounded-full bg-cyan-400"
+            className="inline-block w-0.5 h-4 ml-0.5 rounded-full bg-cyan-400"
             animate={{ opacity: [1, 1, 0, 0] }}
             transition={{
               duration: 1,
@@ -198,7 +197,7 @@ function MagneticNavLink({
           className="absolute -bottom-1 left-1/2 -translate-x-1/2"
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
         >
-          <div className="w-5 h-[2px] rounded-full bg-cyan-400" />
+          <div className="w-5 h-0.5 rounded-full bg-cyan-400" />
         </motion.div>
       )}
     </motion.button>
@@ -315,7 +314,7 @@ export function Navbar() {
       >
         {/* Scroll Progress */}
         <motion.div
-          className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-300 z-50"
+          className="absolute top-0 left-0 h-0.5 bg-linear-to-r from-cyan-500 via-cyan-400 to-cyan-300 z-50"
           style={{ width: `${scrollProgress}%` }}
         />
 
@@ -484,7 +483,7 @@ export function Navbar() {
                         {isActive && (
                           <motion.div
                             layoutId="activeMobileNav"
-                            className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-5 rounded-full bg-cyan-400"
+                            className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 rounded-full bg-cyan-400"
                             transition={{
                               type: "spring",
                               stiffness: 300,

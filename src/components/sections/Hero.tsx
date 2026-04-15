@@ -112,7 +112,7 @@ function TerminalWindow() {
         </span>
       </div>
 
-      <div className="min-h-[260px] space-y-2 p-5 font-mono text-sm">
+      <div className="min-h-65 space-y-2 p-5 font-mono text-sm">
         {displayLines.map((line, index) => (
           <motion.div
             key={index}
@@ -157,7 +157,7 @@ function TerminalWindow() {
               </>
             )}
             <motion.span
-              className="inline-block h-4 w-[2px] shrink-0 align-middle bg-primary"
+              className="inline-block h-4 w-0.5 shrink-0 align-middle bg-primary"
               animate={{ opacity: [1, 1, 0, 0] }}
               transition={{
                 duration: 0.8,
@@ -173,7 +173,7 @@ function TerminalWindow() {
           <div className="flex items-center gap-2">
             <span className="text-emerald-500">❯</span>
             <motion.span
-              className="inline-block h-4 w-[2px] bg-primary"
+              className="inline-block h-4 w-0.5 bg-primary"
               animate={{ opacity: [1, 1, 0, 0] }}
               transition={{
                 duration: 0.8,
@@ -336,7 +336,7 @@ function CodeCard() {
             transition={{ delay: 0.8 + i * 0.05, duration: 0.3 }}
             className="group flex gap-4"
           >
-            <span className="min-w-[16px] select-none text-right text-muted-foreground/30 transition-colors duration-200 group-hover:text-muted-foreground/60">
+            <span className="min-w-4 select-none text-right text-muted-foreground/30 transition-colors duration-200 group-hover:text-muted-foreground/60">
               {line.number}
             </span>
             <span className="whitespace-pre-wrap">{line.content}</span>
@@ -365,7 +365,7 @@ function MouseSpotlight() {
 
   return (
     <motion.div
-      className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full"
+      className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 h-150 w-150 rounded-full"
       style={{
         left: springX,
         top: springY,
@@ -432,7 +432,7 @@ export function Hero() {
             <span className="text-4xl font-light text-muted-foreground/70 sm:text-5xl md:text-6xl lg:text-7xl">
               Md.{" "}
             </span>
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
               Rishad
             </span>
             <br />
@@ -459,7 +459,7 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             // ✅ INCREASED CONTAINER HEIGHT to give the sphere more breathing room
-            className="relative h-[380px] w-full sm:h-[450px] lg:col-span-1"
+            className="relative h-95 w-full sm:h-112.5 lg:col-span-1"
           >
             <div className="absolute inset-0 rounded-full bg-primary/5 blur-3xl" />
             <div className="pointer-events-auto relative z-30 h-full w-full">
