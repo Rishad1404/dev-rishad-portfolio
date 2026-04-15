@@ -23,7 +23,7 @@ import {
   SiGit,
   SiHtml5,
 } from "react-icons/si";
-import {FaCss3} from "react-icons/fa"
+import { FaCss3 } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 /* ===== Skill Data ===== */
@@ -74,7 +74,7 @@ const frontendSkills: Skill[] = [
   {
     name: "Next.js",
     icon: SiNextdotjs,
-    color: "#e6edf3",
+    color: "#71717A", // Updated for Light/Dark visibility
     level: 85,
     description: "SSR, SSG, App Router & API",
   },
@@ -88,11 +88,10 @@ const frontendSkills: Skill[] = [
   {
     name: "Shadcn/ui",
     icon: SiReact,
-    color: "#e6edf3",
+    color: "#71717A", // Updated for Light/Dark visibility
     level: 82,
     description: "Accessible component library",
   },
-  
 ];
 
 const backendSkills: Skill[] = [
@@ -154,7 +153,7 @@ const allIcons = [
   { icon: SiJavascript, color: "#F7DF1E" },
   { icon: SiTypescript, color: "#3178C6" },
   { icon: SiReact, color: "#61DAFB" },
-  { icon: SiNextdotjs, color: "#e6edf3" },
+  { icon: SiNextdotjs, color: "#71717A" }, // Updated
   { icon: SiTailwindcss, color: "#06B6D4" },
   { icon: SiNodedotjs, color: "#339933" },
   { icon: SiExpress, color: "#8b949e" },
@@ -185,7 +184,8 @@ function FloatingIcons() {
   ];
 
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    // Added dark/light mode opacity wrapper for perfect visibility scaling
+    <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-100 dark:opacity-40">
       {allIcons.map((item, i) => (
         <motion.div
           key={i}
@@ -198,7 +198,7 @@ function FloatingIcons() {
             y: [0, -18, 0],
             x: [0, i % 2 === 0 ? 8 : -8, 0],
             rotate: [0, i % 2 === 0 ? 8 : -8, 0],
-            opacity: [0.04, 0.09, 0.04],
+            opacity: [0.08, 0.15, 0.08], // Increased baseline opacity for light mode
           }}
           transition={{
             duration: 5 + i * 0.7,
@@ -486,9 +486,9 @@ function SectionHeader() {
 export function Skills() {
   return (
     <section id="skills" className="relative overflow-hidden py-20">
-      {/* Grid background */}
+      {/* Grid background - Updated for Light/Dark visibility */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        className="pointer-events-none absolute inset-0 opacity-[0.15] dark:opacity-[0.05]"
         style={{
           backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px),
             linear-gradient(90deg, var(--border) 1px, transparent 1px)`,
