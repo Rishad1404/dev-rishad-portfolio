@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/purity */
 "use client";
 
 import { useRef } from "react";
@@ -71,7 +70,7 @@ function SectionHeader() {
         className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl"
       >
         Get to know{" "}
-        <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
           me.
         </span>
       </motion.h2>
@@ -81,7 +80,7 @@ function SectionHeader() {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.2, ease: "circOut" }}
-        className="h-[2px] w-20 origin-left rounded-full bg-gradient-to-r from-cyan-400 to-transparent lg:w-28"
+        className="h-0.5 w-20 origin-left rounded-full bg-linear-to-r from-cyan-400 to-transparent lg:w-28"
       />
     </div>
   );
@@ -116,7 +115,7 @@ function ApiProfileCard() {
       initial={{ opacity: 0, x: 40 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.7, delay: 0.2 }}
-      className="w-full max-w-[500px] overflow-hidden rounded-2xl border border-border/50 bg-[#0d1117]/90 shadow-2xl backdrop-blur-xl"
+      className="w-full max-w-125 overflow-hidden rounded-2xl border border-border/50 bg-[#0d1117]/90 shadow-2xl backdrop-blur-xl"
     >
       {/* Browser / API Header */}
       <div className="flex flex-col border-b border-border/50 bg-[#161b22]/90">
@@ -156,7 +155,7 @@ function ApiProfileCard() {
             transition={{ delay: 0.4 + i * 0.04, duration: 0.3 }}
             className="flex gap-4 px-2 hover:bg-white/5 rounded transition-colors"
           >
-            <span className="min-w-[1.5rem] select-none text-right text-muted-foreground/30">
+            <span className="min-w-6 select-none text-right text-muted-foreground/30">
               {item.line}
             </span>
             <span className="whitespace-pre">{item.text}</span>
@@ -314,7 +313,7 @@ export function About() {
       <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_10%,var(--background)_80%)]" />
 
       {/* Subtle Primary Glow */}
-      <div className="pointer-events-none absolute right-0 top-[20%] z-0 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-primary/5 blur-[120px]" />
+      <div className="pointer-events-none absolute right-0 top-[20%] z-0 h-100 w-100 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
         <SectionHeader />

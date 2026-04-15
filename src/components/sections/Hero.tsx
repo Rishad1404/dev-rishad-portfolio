@@ -27,20 +27,18 @@ const TechSphere = dynamic(
             transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-mono text-xs text-muted-foreground">
-              loading...
-            </span>
+            <span className="font-mono text-xs text-muted-foreground">loading...</span>
           </div>
         </div>
       </div>
     ),
-  }
+  },
 );
 
 /* ===== Typing Hook ===== */
 function useTypingAnimation(
   lines: { text: string; delay: number }[],
-  speed: number = 45
+  speed: number = 45,
 ) {
   const [currentLine, setCurrentLine] = useState(0);
   const [displayLines, setDisplayLines] = useState<string[]>([]);
@@ -87,12 +85,7 @@ function TerminalWindow() {
   ];
 
   const { displayLines, currentText } = useTypingAnimation(terminalLines, 40);
-  const commands = [
-    "whoami",
-    "cat role.txt",
-    "cat location.txt",
-    "echo $STATUS",
-  ];
+  const commands = ["whoami", "cat role.txt", "cat location.txt", "echo $STATUS"];
   const isCommand = (text: string) => commands.includes(text);
 
   return (
@@ -131,9 +124,7 @@ function TerminalWindow() {
                 <span className="w-4 shrink-0" />
                 <span
                   className={
-                    line.includes("✓")
-                      ? "text-emerald-500"
-                      : "text-foreground/80"
+                    line.includes("✓") ? "text-emerald-500" : "text-foreground/80"
                   }
                 >
                   {line}
@@ -251,13 +242,9 @@ function CodeCard() {
           <span className="text-foreground">{"  "}</span>
           <span className="text-[#0550ae] dark:text-[#79c0ff]">skills</span>
           <span className="text-foreground">: [</span>
-          <span className="text-[#0a3069] dark:text-[#a5d6ff]">
-            &quot;Next.js&quot;
-          </span>
+          <span className="text-[#0a3069] dark:text-[#a5d6ff]">&quot;Next.js&quot;</span>
           <span className="text-foreground">, </span>
-          <span className="text-[#0a3069] dark:text-[#a5d6ff]">
-            &quot;Node.js&quot;
-          </span>
+          <span className="text-[#0a3069] dark:text-[#a5d6ff]">&quot;Node.js&quot;</span>
           <span className="text-foreground">,</span>
         </>
       ),
@@ -271,9 +258,7 @@ function CodeCard() {
             &quot;PostgreSQL&quot;
           </span>
           <span className="text-foreground">, </span>
-          <span className="text-[#0a3069] dark:text-[#a5d6ff]">
-            &quot;Docker&quot;
-          </span>
+          <span className="text-[#0a3069] dark:text-[#a5d6ff]">&quot;Docker&quot;</span>
           <span className="text-foreground">],</span>
         </>
       ),
@@ -321,9 +306,7 @@ function CodeCard() {
         <div className="h-3 w-3 rounded-full bg-[#61C554]" />
         <div className="ml-2 flex items-center gap-1.5">
           <FolderOpen className="h-3 w-3 text-muted-foreground" />
-          <span className="font-mono text-xs text-muted-foreground">
-            developer.ts
-          </span>
+          <span className="font-mono text-xs text-muted-foreground">developer.ts</span>
         </div>
       </div>
 
@@ -369,8 +352,7 @@ function MouseSpotlight() {
       style={{
         left: springX,
         top: springY,
-        background:
-          "radial-gradient(circle, rgba(34,211,238,0.04) 0%, transparent 65%)",
+        background: "radial-gradient(circle, rgba(34,211,238,0.04) 0%, transparent 65%)",
       }}
     />
   );
@@ -498,14 +480,17 @@ export function Hero() {
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-            <Button
-              variant="outline"
-              size="lg"
-              className="h-12 gap-2 rounded-lg border-border px-8 font-semibold cursor-pointer transition-all duration-200 hover:border-primary/40 hover:bg-accent"
-            >
-              <Download className="h-4 w-4" />
-              Download Resume
-            </Button>
+            <a href="/resume.pdf" download="Md_Rishad_Islam_Resume.pdf" tabIndex={-1}>
+              <Button
+                type="button"
+                variant="outline"
+                size="lg"
+                className="h-12 gap-2 rounded-lg border-border px-8 font-semibold cursor-pointer transition-all duration-200 hover:border-primary/40 hover:bg-accent"
+              >
+                <Download className="h-4 w-4" />
+                Download Resume
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
 
