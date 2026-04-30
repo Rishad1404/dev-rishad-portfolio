@@ -17,8 +17,112 @@ const navLinks = [
   { name: "Contact", href: "#contact" },
 ];
 
-/* ===== Animated Tech Logo ===== */
-function TechLogo({ onClick }: { onClick: () => void }) {
+/* ===== Animated Code Icon ===== */
+function AnimatedCodeIcon({ isHovered }: { isHovered: boolean }) {
+  return (
+    <motion.div
+      className="relative flex items-center justify-center w-12 h-12"
+      animate={{
+        scale: isHovered ? 1.1 : 1,
+        rotate: isHovered ? [0, -10, 10, 0] : 0,
+      }}
+      transition={{
+        scale: { duration: 0.2 },
+        rotate: { duration: 0.6, ease: "easeInOut" }
+      }}
+    >
+      {/* Glowing background */}
+      <motion.div
+        className="absolute inset-0 rounded-full bg-cyan-400/20 blur-md"
+        animate={{
+          scale: isHovered ? 1.3 : 0,
+          opacity: isHovered ? 1 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+      />
+
+      {/* Code icon */}
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="relative z-10 text-cyan-400"
+      >
+        <motion.path
+          d="M16 18L22 12L16 6"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          animate={{
+            x: isHovered ? 1.5 : 0,
+            opacity: isHovered ? 1 : 0.8,
+          }}
+          transition={{ duration: 0.2 }}
+        />
+        <motion.path
+          d="M8 6L2 12L8 18"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          animate={{
+            x: isHovered ? -1.5 : 0,
+            opacity: isHovered ? 1 : 0.8,
+          }}
+          transition={{ duration: 0.2 }}
+        />
+        {/* Middle line that appears on hover */}
+        <motion.path
+          d="M12 4L10 20"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          initial={{ opacity: 0.4, scale: 0.8 }}
+          animate={{
+            opacity: isHovered ? 0.9 : 0.4,
+            scale: isHovered ? 1 : 0.8,
+          }}
+          transition={{ duration: 0.3 }}
+        />
+      </svg>
+
+      {/* Orbiting dots */}
+      {[...Array(3)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]"
+          style={{
+            top: "50%",
+            left: "50%",
+            marginTop: "-3px",
+            marginLeft: "-3px",
+          }}
+          animate={{
+            x: isHovered
+              ? [0, Math.cos((i * Math.PI * 2) / 3) * 20]
+              : 0,
+            y: isHovered
+              ? [0, Math.sin((i * Math.PI * 2) / 3) * 20]
+              : 0,
+            opacity: isHovered ? [0, 1, 0.5] : 0,
+            scale: isHovered ? [0, 1, 0.8] : 0,
+          }}
+          transition={{
+            duration: 1.2,
+            delay: i * 0.15,
+            repeat: isHovered ? Infinity : 0,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </motion.div>
+  );
+}
+
+/* ===== Signature Logo with Icon ===== */
+function SignatureLogo({ onClick }: { onClick: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -27,114 +131,109 @@ function TechLogo({ onClick }: { onClick: () => void }) {
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="flex items-center gap-2.5 group cursor-pointer relative"
+      className="flex items-center gap-2 md:gap-3 group cursor-pointer relative outline-none"
       whileTap={{ scale: 0.95 }}
     >
-      <div className="relative w-9 h-9">
-        {/* Glow */}
+      {/* Font import */}
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+          .font-signature {
+            font-family: 'Alex Brush', cursive;
+          }
+        `}
+      </style>
+
+      {/* Animated Code Icon */}
+      <AnimatedCodeIcon isHovered={isHovered} />
+
+      {/* Signature Container */}
+      <div className="relative flex flex-col items-start justify-center pt-1 pr-4">
+        {/* Signature Text */}
         <motion.div
-          className="absolute inset-0 rounded-lg"
+          className="text-4xl md:text-5xl font-signature text-foreground z-10 tracking-wide"
           animate={{
-            boxShadow: isHovered
-              ? "0 0 20px #22d3ee44, 0 0 40px #22d3ee11"
-              : "0 0 0px #22d3ee00",
-          }}
-          transition={{ duration: 0.3 }}
-        />
-
-        {/* Background */}
-        <motion.div
-          className="absolute inset-0 rounded-lg border"
-          animate={{
-            background: isHovered ? "#22d3ee11" : "#22d3ee00",
-            borderColor: isHovered ? "#22d3ee55" : "#30363d",
-          }}
-          transition={{ duration: 0.3 }}
-        />
-
-        {/* SVG */}
-        <svg viewBox="0 0 36 36" className="relative z-10 w-full h-full" fill="none">
-          <motion.path
-            d="M13 10L7 18L13 26"
-            stroke="#22d3ee"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            animate={{ x: isHovered ? -1.5 : 0 }}
-            transition={{ type: "spring", stiffness: 400 }}
-          />
-          <motion.path
-            d="M23 10L29 18L23 26"
-            stroke="#22d3ee"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            animate={{ x: isHovered ? 1.5 : 0 }}
-            transition={{ type: "spring", stiffness: 400 }}
-          />
-          <motion.path
-            d="M20 8L16 28"
-            stroke="#06b6d4"
-            strokeWidth="2"
-            strokeLinecap="round"
-            animate={{ opacity: isHovered ? 1 : 0.5 }}
-            transition={{ duration: 0.3 }}
-          />
-        </svg>
-
-        {/* Pulse ring */}
-        <AnimatePresence>
-          {isHovered && (
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0.6 }}
-              animate={{ scale: 1.8, opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, repeat: Infinity }}
-              className="absolute inset-0 rounded-lg border border-cyan-400/30"
-            />
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Text */}
-      <div className="flex flex-col text-left leading-none">
-        <div className="flex items-center">
-          <span className="text-base font-bold text-foreground tracking-tight">
-            Rishad
-          </span>
-          <motion.span
-            className="text-base font-bold"
-            animate={{
-              color: isHovered ? "#22d3ee" : "#8b949e",
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            .dev
-          </motion.span>
-
-          {/* Blinking cursor (Fixed ease error) */}
-          <motion.span
-            className="inline-block w-0.5 h-4 ml-0.5 rounded-full bg-cyan-400"
-            animate={{ opacity: [1, 1, 0, 0] }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "linear",
-              times: [0, 0.5, 0.5, 1],
-            }}
-          />
-        </div>
-
-        {/* Subtitle */}
-        <motion.span
-          className="text-[9px] tracking-[0.2em] uppercase text-muted-foreground/60 font-medium mt-0.5"
-          animate={{
-            letterSpacing: isHovered ? "0.25em" : "0.2em",
+            color: isHovered ? "var(--tw-prose-links)" : "currentColor", // Failsafes to current text, overrides on hover
+            textShadow: isHovered 
+              ? "0 0 15px rgba(34, 211, 238, 0.4)" 
+              : "0 0 0px rgba(34, 211, 238, 0)"
           }}
           transition={{ duration: 0.3 }}
         >
-          full stack dev
-        </motion.span>
+          <span className={cn("transition-colors duration-300", isHovered && "text-cyan-400")}>
+            Rishad
+          </span>
+        </motion.div>
+
+        {/* Animated Underline Swoosh */}
+        <svg
+          viewBox="0 0 120 30"
+          className="absolute -bottom-3 -left-[5%] w-[110%] h-auto text-cyan-400 z-0 pointer-events-none"
+          fill="none"
+        >
+          <motion.path
+            d="M 5 20 Q 35 5, 60 20 T 115 15"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            initial={{ pathLength: 0.3, opacity: 0.5 }}
+            animate={{
+              pathLength: isHovered ? 1 : 0.3,
+              opacity: isHovered ? 1 : 0.5,
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          />
+          {/* Secondary decorative swoosh */}
+          <motion.path
+            d="M 40 28 Q 70 20, 100 25"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{
+              pathLength: isHovered ? 1 : 0,
+              opacity: isHovered ? 0.7 : 0,
+            }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+          />
+        </svg>
+
+        {/* Floating Sparkles on Hover */}
+        <AnimatePresence>
+          {isHovered && (
+            <>
+              {[...Array(2)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ scale: 0, opacity: 0, rotate: -45 }}
+                  animate={{ 
+                    scale: 1, 
+                    opacity: [0, 1, 0], 
+                    rotate: [0, 180, 360],
+                    x: [0, (i % 2 === 0 ? 15 : -10)],
+                    y: [0, (i % 2 === 0 ? -15 : -25)],
+                  }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{ 
+                    duration: 1.5, 
+                    delay: i * 0.2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute text-cyan-400"
+                  style={{
+                    right: i % 2 === 0 ? '5px' : '20px',
+                    top: i % 2 === 0 ? '0px' : '10px',
+                  }}
+                >
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                  </svg>
+                </motion.div>
+              ))}
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </motion.button>
   );
@@ -314,13 +413,13 @@ export function Navbar() {
       >
         {/* Scroll Progress */}
         <motion.div
-          className="absolute top-0 left-0 h-0.5 bg-linear-to-r from-cyan-500 via-cyan-400 to-cyan-300 z-50"
+          className="absolute top-0 left-0 h-0.5 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-300 z-50"
           style={{ width: `${scrollProgress}%` }}
         />
 
         <nav className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <div className="flex items-center justify-between h-16">
-            <TechLogo onClick={() => handleNavClick("#home")} />
+            <SignatureLogo onClick={() => handleNavClick("#home")} />
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-2">

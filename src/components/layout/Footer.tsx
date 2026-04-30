@@ -57,7 +57,7 @@ export function Footer() {
             <div className="mb-6 flex items-center gap-4">
               <div className="relative h-12 w-12 shrink-0 rounded-full border border-primary/20 p-0.5 bg-background shadow-[0_0_15px_rgba(var(--primary),0.1)]">
                 <Image
-                  src="https://i.ibb.co.com/jvLSdVkv/1646196416119.jpg"
+                  src="https://i.ibb.co.com/SXB1QbDK/profile-removebg-preview.png"
                   alt="Md. Rishad Islam"
                   fill
                   className="rounded-full object-cover"
